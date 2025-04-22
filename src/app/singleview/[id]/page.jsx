@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default async function SingleProduct ({ params }) {
     const { id } = params;
@@ -8,14 +9,16 @@ export default async function SingleProduct ({ params }) {
     console.log(product);
 
     return (
-        <div>
+      <article className="grid grid-cols-[minmax(20px,0.2fr)_1fr_minmax(20px,0.2fr)]">
+        <div className="col-2">
+          <Link href={"/"} className="text-blue-500 underline mb-4">Back</Link>
             {product.images ? (
         <Image
           src={product.images[0]}
-          alt={product.title} 
+          alt={product.title}
           width={400}
           height={400}
-          className="rounded-xl w-full"
+          className="rounded-xl w-half"
         />
       ) : (
         <div className="w-full bg-gray-800 h-[400px] rounded-lg flex items-center justify-center">
@@ -23,5 +26,6 @@ export default async function SingleProduct ({ params }) {
         </div>
       )}
         </div>
+        </article>
     )
 }
