@@ -1,18 +1,18 @@
-import Link from "next/link";
 import Image from "next/image";
 
 export default async function SingleProduct ({ params }) {
     const { id } = params;
-    const data = await fetch(`https://dummyjson.com/products/${id}`);
-    const products = await data.json();
-    console.log(products);
+    const res = await fetch(`https://dummyjson.com/products/${id}`);
+    const data = await res.json();
+    const product = data;
+    console.log(product);
 
     return (
         <div>
-            {products.images?.[0] ? (
+            {product.images ? (
         <Image
           src={product.images[0]}
-          alt={products.name}
+          alt={product.title} 
           width={400}
           height={400}
           className="rounded-xl w-full"
