@@ -4,7 +4,7 @@ const categoryList = ["beauty", "fragrances", "furniture", "groceries"];
 
 const Categories = ({ selectedCategory, onSelectCategory }) => {
   return (
-    <div className="w-[240px] bg-white p-4 border rounded-lg shadow-md">
+    <div className="w-[240px] bg-white p-4 border border-gray-200 rounded-lg shadow-md">
       <h1 className="text-black mb-2">Sort by category</h1>
       <select
         value={selectedCategory || ""}

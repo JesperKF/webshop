@@ -58,7 +58,7 @@ const Productcard = ({ data }) => {
       <ul className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 flex-1">
         {filteredProducts.map((product) => (
           <Link key={product.id} href={`/singleview/${product.id}`}>
-            <li className="flex flex-col h-full p-4 border rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 hover:bg-gray-100">
+            <li className="flex flex-col h-full p-4 border border-gray-200 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 hover:bg-gray-100">
               <p className={`text-white w-fit px-3 rounded-full font-sm ${getCategoryColor(product.category)}`}>
                 {product.category}
               </p>
@@ -87,7 +87,7 @@ const Productcard = ({ data }) => {
       </ul>
 
       <div className="flex flex-col w-80 h-fit sticky top-20">
-        <div className="bg-white p-4 border rounded-lg shadow-md">
+        <div className="bg-white p-4 border border-gray-200 rounded-lg shadow-md">
           <Cart />
         </div>
       </div>

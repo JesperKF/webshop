@@ -11,7 +11,7 @@ const Search = ({ onSearch }) => {
   };
 
   return (
-    <div className="w-[237px] bg-white p-4 border rounded-lg shadow-md">
+    <div className="w-[237px] bg-white p-4 border border-gray-200 rounded-lg shadow-md">
       <h1 className="text-black mb-2">Search</h1>
       <input
         className="rounded-md bg-gradient-to-br from-purple-700/80 to-red-500/80 text-white"
