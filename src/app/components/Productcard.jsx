@@ -4,10 +4,13 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ShoppingBasket } from "lucide-react";
+import useCartStore from "./useCartStore";
+
 
 import Cart from "./Cart";
 import Categories from "./Categories";
 import Search from "./Search";
+
 
 const categoryColors = {
   beauty: "bg-pink-500/70",
@@ -26,6 +29,7 @@ const getStockColor = (status) =>
 
 
 const Productcard = ({ data }) => {
+  const addToCart = useCartStore((state) => state.addToCart);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -77,8 +81,14 @@ const Productcard = ({ data }) => {
               <div className="flex-grow"></div>
               <div className="flex justify-between items-center">
                 <h2 className="text-gray-500">€ {product.price}</h2>
-                <div className="rounded-full bg-gradient-to-br from-cyan-300 to-blue-700 text-white p-2 hover:scale-120">
-                  <ShoppingBasket />
+                <div
+                className="rounded-full bg-gradient-to-br from-cyan-300 to-blue-700 text-white p-2 hover:scale-120 cursor-pointer"
+                onClick={(e) => {
+                  e.preventDefault();
+                  addToCart(product);
+                }}
+                >
+                <ShoppingBasket />
                 </div>
               </div>
             </li>
