@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { IoArrowBackSharp } from "react-icons/io5";
+import { FaArrowDown } from "react-icons/fa";
 
 export default function SingleProductClient({ product }) {
   const [image, setImage] = useState(product.images[0]);
@@ -77,19 +78,25 @@ export default function SingleProductClient({ product }) {
             <p className="text-gray-500 p-2">{product.availabilityStatus}</p>
 
             {/* Togglebar for information */}
-            <div className="mt-16 p-2">
+            <div className="mt-16 p-2 border border-gray-300 rounded-2xl">
               <h2
                 onClick={toggleInfo}
-                className="mb-4 bg-gray-50 w-fit rounded-full py-1 px-2 cursor-pointer hover:bg-gray-100 transition"
+                className=" bg-gray-50 items-center rounded-full px-2 cursor-pointer hover:bg-gray-100 transition"
               >
+                <div className="flex justify-between items-center">
                 Information:
+                <FaArrowDown />
+                
+                </div>
               </h2>
               {infoOpen && (
                 <>
-                  <h2>Category:</h2>
-                  <p className="bg-white my-2">{product.category}</p>
-                  <h2>Shipping Information:</h2>
-                  <p className="bg-white my-2">{product.shippingInformation}</p>
+                  <hr className="mt-2"/>
+                  <h2 className="mt-4 px-2">Category:</h2>
+                  <p className="bg-white px-2 text-gray-500">{product.category}</p>
+                  <hr className="mb-4"/>
+                  <h2 className="px-2">Shipping Information:</h2>
+                  <p className="bg-white px-2">{product.shippingInformation}</p>
                 </>
               )}
             </div>
