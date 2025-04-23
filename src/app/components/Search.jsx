@@ -7,14 +7,14 @@ const Search = ({ onSearch }) => {
 
   const handleChange = (e) => {
     setQuery(e.target.value);
-    onSearch(e.target.value); // Call onSearch with the query
+    onSearch(e.target.value);
   };
 
   return (
     <div className="w-[237px] bg-white p-4 border border-gray-200 rounded-lg shadow-md">
-      <h1 className="text-black mb-2">Search</h1>
+      <h1 className="text-black mb-2">Search for a specific item</h1>
       <input
-        className="rounded-md bg-gradient-to-br from-purple-700/80 to-red-500/80 text-white"
+        className="rounded-md border-2 border-pink-300 text-black focus:outline-none focus:border-purple-500"
         type="text"
         value={query}
         onChange={handleChange}

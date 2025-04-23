@@ -17,5 +17,5 @@ input {
 }
 
 input::placeholder {
-  color: #ffffff;
+  color: rgb(161, 161, 161);
 }
