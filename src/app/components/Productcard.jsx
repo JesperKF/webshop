@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const Productcard = ({ data }) => {
   return (
@@ -12,6 +13,13 @@ const Productcard = ({ data }) => {
             <div className="flex items-center justify-between p-8">
               <h1>{product.title}</h1>
               <h2>{product.price}</h2>
+              <Image
+                        src={product.images[0]}
+                        alt={product.title}
+                        width={400}
+                        height={400}
+                        className="rounded-xl w-half"
+                      />
             </div>
             <div>{product.description}</div>
           </li>
