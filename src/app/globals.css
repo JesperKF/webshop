@@ -10,12 +10,3 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
-
-input {
-  padding: 5px;
-  font-size: 16px;
-}
-
-input::placeholder {
-  color: rgb(161, 161, 161);
-}
