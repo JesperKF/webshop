@@ -9,13 +9,22 @@
     "lint": "next lint"
   },
   "dependencies": {
+<<<<<<< HEAD
     "@tailwindcss/vite": "^4.1.4",
     "next": "15.3.0",
+=======
+    "next": "15.3.0",
+    "postcss": "^8.5.3",
+>>>>>>> olivers-branch
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
+<<<<<<< HEAD
     "@tailwindcss/postcss": "^4",
+=======
+    "@tailwindcss/postcss": "^4.1.4",
+>>>>>>> olivers-branch
     "tailwindcss": "^4.1.4"
   }
 }
