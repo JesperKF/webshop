@@ -1,6 +1,5 @@
 "use client";
 
-import Reviews from "/components/Reviews";
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -60,8 +59,19 @@ export default function SingleProductClient({ product }) {
                 <p className="mt-4 px-2 w-fit rounded-full">Discount: {product.discountPercentage}%</p>
             </div>
             <Link className="flex mt-16 justify-center p-4 bg-gradient-to-br from-purple-700/80 to-red-500/80 rounded-full text-white hover:invert" href={"/checkout"}>Buy</Link>
+            <p className=" text-gray-500">{product.availabilityStatus}</p>
+            <div className="mt-16 bg-gray-50 border border-gray-300 rounded-lg p-2">
+            <h2 className="">Description:</h2>
+            </div>
         </div>
-        <Reviews/>
+        <div className="col-span-full">
+            <h1 className="flex justify-center text-2xl mb-4">Reviews</h1>
+            <div className="shadow-md bg-gray-50 p-4 rounded-lg">
+                <h3>Rating</h3>
+                <h3>{product.rating}</h3>
+                {product.comment}
+            </div>
+        </div>
         </div>
       </div>
     </article>
