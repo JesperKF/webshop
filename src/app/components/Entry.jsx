@@ -1,12 +1,15 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 
 const Entry = () => {
   return (
     <div className="relative w-full h-max">
-      <img
+      <Image
       className="w-full h-[80vh] object-cover absolute top-0 left-0 z-0 -scale-x-100"
-      src="images/aisle.jpg"
+      width={1000}
+      height={1000}
+      src="/images/aisle.jpg"
       alt="picture of a grocery store aisle"
       />
       <div className="absolute left-20 top-10 flex gap-10 text-xl text-white bg-gradient-to-br from-purple-700/80 to-red-500/80 rounded-full p-2 z-10">
