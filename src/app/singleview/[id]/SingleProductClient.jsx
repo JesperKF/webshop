@@ -1,5 +1,6 @@
 "use client";
 
+import Reviews from "/components/Reviews";
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -21,7 +22,7 @@ export default function SingleProductClient({ product }) {
         </Link>
 
         {/*Opdeling*/}
-        <div className="grid grid-cols-[auto_auto]">
+        <div className="grid grid-cols-[auto_auto] gap-16 mt-16">
             <div>
         {image ? (
           <Image
@@ -29,7 +30,7 @@ export default function SingleProductClient({ product }) {
             alt={product.title}
             width={400}
             height={400}
-            className="rounded-xl w-full"
+            className="rounded-xl w-full max-w-[500px] h-[400px] object-cover object-center"
           />
         ) : (
           <div className="w-full bg-gray-800 h-[400px] rounded-lg flex items-center justify-center">
@@ -38,7 +39,7 @@ export default function SingleProductClient({ product }) {
         )}
 
         <div className="mt-4 flex gap-2 flex-wrap">
-          {[product.thumbnail, ...product.images].map((img, i) => (
+          {[...product.images].map((img, i) => (
             <Image
               key={i}
               onClick={() => imageSetter(img)}
@@ -51,15 +52,16 @@ export default function SingleProductClient({ product }) {
           ))}
           </div>
         </div>
-        <div className="col-2">
+        <div className="col-2 max-w-[500px]">
             <h1 className="text-2xl">{product.title}</h1>
-            <p className="mt-4 w-[400px] text-gray-500">{product.description}</p>
-            <p className="mt-4">{product.price} €</p>
-            <Link href={"/"}></Link>
+            <p className="mt-4 text-gray-500">{product.description}</p>
+            <div className="flex justify-between items-center mt-4">
+                <p className="mt-4 px-2 bg-gradient-to-br from-purple-700/80 to-red-500/80 text-white w-fit rounded-full">{product.price} €</p>
+                <p className="mt-4 px-2 w-fit rounded-full">Discount: {product.discountPercentage}%</p>
+            </div>
+            <Link className="flex mt-16 justify-center p-4 bg-gradient-to-br from-purple-700/80 to-red-500/80 rounded-full text-white hover:invert" href={"/checkout"}>Buy</Link>
         </div>
-        <div className="col-span-full">
-          <h3>{product.review}</h3>
-        </div>
+        <Reviews/>
         </div>
       </div>
     </article>
