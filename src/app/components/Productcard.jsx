@@ -6,7 +6,7 @@ const Productcard = ({ data }) => {
       {data.products.map((product) => (
         <Link
           key={product.id}
-          href={`/products/${product.id}`}
+          href={`/singleview/${product.id}`}
         >
           <li className="flex flex-col gap-4 border-b border-black p-4 hover:bg-[#D21E1F] hover:text-white transition duration-300">
             <div className="flex items-center justify-between p-8">
