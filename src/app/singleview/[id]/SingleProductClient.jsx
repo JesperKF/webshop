@@ -61,7 +61,7 @@ export default function SingleProductClient({ product }) {
             </div>
           </div>
           <div className="col-2 max-w-[500px]">
-            <h1 className="text-2xl">{product.title}</h1>
+            <h1 className="text-2xl text-black">{product.title}</h1>
             <p className="mt-4 text-gray-500">{product.description}</p>
             <div className="flex justify-between items-center mt-4">
               <p className="mt-4 px-2 bg-gradient-to-br from-purple-700/80 to-red-500/80 text-white w-fit rounded-full">
