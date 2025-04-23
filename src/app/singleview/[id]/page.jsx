@@ -11,6 +11,7 @@ export default async function SingleProduct ({ params }) {
     return (
       <article className="grid grid-cols-[minmax(20px,0.2fr)_1fr_minmax(20px,0.2fr)]">
         <div className="col-2">
+          <div>
           <Link href={"/"} className="text-blue-500 underline mb-4">Back</Link>
             {product.images ? (
         <Image
@@ -25,7 +26,8 @@ export default async function SingleProduct ({ params }) {
           <span className="text-white text-center p-8">No Image Available</span>
         </div>
       )}
-        </div>
-        </article>
+           </div>
+         </div>
+      </article>
     )
 }
