@@ -38,7 +38,7 @@ export default function SingleProductClient({ product }) {
                 alt={product.title}
                 width={400}
                 height={400}
-                className="rounded-xl w-full max-w-[500px] h-[400px] object-cover object-center"
+                className="text-black rounded-xl w-full max-w-[500px] h-[400px] object-cover object-center"
               />
             ) : (
               <div className="w-full bg-gray-800 h-[400px] rounded-lg flex items-center justify-center">
