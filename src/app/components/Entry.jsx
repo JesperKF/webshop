@@ -12,12 +12,6 @@ const Entry = () => {
       src="/images/aisle.jpg"
       alt="picture of a grocery store aisle"
       />
-      <div className="absolute left-20 top-10 flex gap-10 text-xl text-white bg-gradient-to-br from-purple-700/80 to-red-500/80 rounded-full p-2 z-10">
-            <Link className="py-2 px-4 rounded-full bg-red-950/30 hover:bg-red-950/30  transition duration-300" href="/">Home</Link>
-            <Link className="py-2 px-4 rounded-full hover:bg-red-950/30 transition duration-200" href="/shop">Products</Link>
-            <Link className="py-2 px-4 rounded-full hover:bg-red-950/30 transition duration-200" href="/shop">Account</Link>
-            <Link className="py-2 px-4 rounded-full hover:bg-red-950/30 transition duration-200" href="/shop">Contact</Link>
-        </div>
       <div className="absolute top-100 left-20 z-10 flex flex-col items-start gap-4">
         <div className="font-poppins text-white font-[100] text-6xl">
           Welcome to the Fakery
