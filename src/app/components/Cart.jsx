@@ -1,9 +1,12 @@
 "use client";
 
 import useCartStore from "./useCartStore";
+import { FaRegTrashAlt } from "react-icons/fa";
+
 
 const Cart = () => {
   const cart = useCartStore((state) => state.cart);
+  const removeFromCart = useCartStore((state) => state.removeFromCart);
 
   const total = cart.reduce((acc, item) => acc + item.price, 0).toFixed(2);
 
@@ -16,9 +19,10 @@ const Cart = () => {
         <>
           <ul className="text-gray-800 mb-4">
             {cart.map((item) => (
-              <li key={item.id} className="p-2 bg-gray-100/70 mb-1">
-                {item.title} - € {item.price}
-              </li>
+              <li key={item.id} className="relative flex justify-between p-2 bg-gray-100/70 mb-1">
+              <span className="max-w-[75%] break-words">{item.title} - € {item.price}</span>
+              <FaRegTrashAlt className="absolute right-3 top-1/2 transform -translate-y-1/2 hover:scale-110 cursor-pointer" onClick={() => removeFromCart(item.id)} />
+            </li>
             ))}
           </ul>
           <p className="font-semibold text-black">Total: € {total}</p>
