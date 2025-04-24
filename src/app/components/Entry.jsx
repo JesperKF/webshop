@@ -6,7 +6,7 @@ const Entry = () => {
   return (
     <div className="relative w-full h-max">
       <Image
-      className="w-full h-[80vh] object-cover absolute top-0 left-0 z-0 -scale-x-100"
+      className="w-full h-[80vh] object-cover absolute top-5 rounded-lg left-0 z-0 -scale-x-100"
       width={1000}
       height={1000}
       src="/images/aisle.jpg"

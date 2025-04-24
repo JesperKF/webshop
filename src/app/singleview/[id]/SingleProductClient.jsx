@@ -22,7 +22,7 @@ export default function SingleProductClient({ product }) {
     <article className="grid grid-cols-[minmax(20px,0.2fr)_1fr_minmax(20px,0.2fr)]">
       <div className="col-2">
         <Link
-          href="/"
+          href="/shop"
           className="text-black mb-4 flex items-center cursor-pointer text-xl w-fit rounded-full p-2 mt-4 border border-gray-300"
         >
           <IoArrowBackSharp />
