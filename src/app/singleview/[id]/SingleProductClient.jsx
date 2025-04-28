@@ -91,12 +91,20 @@ export default function SingleProductClient({ product }) {
               </h2>
               {infoOpen && (
                 <>
-                  <hr className="mt-2"/>
-                  <h2 className="mt-4 px-2">Category:</h2>
-                  <p className="bg-white px-2 text-gray-500">{product.category}</p>
-                  <hr className="mb-4"/>
+                  <hr className="mb-4 mt-4"/>
+                  <h2 className="px-2">Size:</h2>
+                  <p className="bg-white px-2 text-gray-500">Bredde: {product.dimensions.width}</p>
+                  <p className="bg-white px-2 text-gray-500">Højde: {product.dimensions.height}</p>
+                  <p className="bg-white px-2 text-gray-500">Dybde: {product.dimensions.depth}</p>
+                  <hr className="mb-4 mt-4"/>
+                  <h2 className="px-2">Catogory:</h2>
+                  <p className="bg-white px-2 text-gray-500">{product.tags[0]}</p>
+                  <hr className="mb-4 mt-4"/>
+                  <h2 className="px-2">Brand:</h2>
+                  <p className="bg-white px-2 text-gray-500">{product.brand}</p>
+                  <hr className="mb-4 mt-4"/>
                   <h2 className="px-2">Shipping Information:</h2>
-                  <p className="bg-white px-2">{product.shippingInformation}</p>
+                  <p className="bg-white px-2 text-gray-500">{product.shippingInformation}</p>
                 </>
               )}
             </div>
@@ -104,9 +112,19 @@ export default function SingleProductClient({ product }) {
 
           <div className="col-span-full">
             <h1 className="flex justify-center text-2xl mb-4">Reviews</h1>
-            <div className="shadow-md bg-gray-50 p-4 rounded-lg">
-              <h3>Rating</h3>
-              <h3>{product.rating}</h3>
+            <div className="rounded-lg flex flex-col gap-4 max-w-[850px] mx-auto">
+              <div className="flex flex-col justify-between shadow-md bg-gray-50 px-16 py-4 items-center relative">
+                <h3 className="text-gray-500">Overall Rating</h3>
+         {/*        <p className="text-gray-400 font-thin absolute left-[50%] scale-200">|</p> */}
+                <h3 className="text-4xl">{product.rating}</h3>
+              </div>
+                <div className="flex flex-col justify-between shadow-md bg-gray-50 px-16 py-4 items-center relative">
+                  <h3 className="border-b">User: <span className="text-gray-500">{product.reviews[0].reviewerName}</span></h3>
+                  <div className="flex justify-between items-center w-full mt-8">
+                    <h3>Comment: <span className="text-gray-500">{product.reviews[0].comment}</span></h3>
+                    <h3>Rating: <span className="text-gray-500">{product.reviews[0].rating}</span></h3>
+                  </div>
+                </div>
             </div>
           </div>
         </div>
