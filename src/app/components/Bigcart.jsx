@@ -6,7 +6,9 @@ const Bigcart = () => {
   const cart = useCartStore((state) => state.cart);
   const removeFromCart = useCartStore((state) => state.removeFromCart);
 
-  const total = cart.reduce((acc, item) => acc + item.price, 0).toFixed(2);
+  const total = cart
+  .reduce((acc, item) => acc + item.price * item.quantity, 0)
+  .toFixed(2);
 
   return (
     <div className="p-4 border border-gray-200 rounded-lg shadow-md">
@@ -22,8 +24,8 @@ const Bigcart = () => {
                 className="flex justify-between items-center py-3 px-8 hover:shadow-lg transition-shadow duration-300 hover:bg-gray-100"
               >
                 <div>
-                  <p className="font-semibold">{item.title}</p>
-                  <p className="text-gray-700 text-sm">€ {item.price}</p>
+                  <p className="font-semibold">{item.title} (x{item.quantity})</p>
+                  <p className="text-gray-700 text-sm">€ {(item.price * item.quantity).toFixed(2)}</p>
                 </div>
                 <FaRegTrashAlt
                   className="text-red-500 cursor-pointer hover:scale-110 transition-transform"
