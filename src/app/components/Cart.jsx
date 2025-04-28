@@ -25,7 +25,7 @@ const Cart = () => {
               <span className="max-w-[75%] break-words">
                 {item.title} (x{item.quantity}) - € {(item.price * item.quantity).toFixed(2)}
               </span>
-              <FaRegTrashAlt className="absolute right-3 top-1/2 transform -translate-y-1/2 hover:scale-110 cursor-pointer" onClick={() => removeFromCart(item.id)} />
+              <FaRegTrashAlt className="absolute right-3 top-1/2 transform -translate-y-1/2 hover:scale-110 cursor-pointer text-red-500" onClick={() => removeFromCart(item.id)} />
             </li>
             ))}
           </ul>
