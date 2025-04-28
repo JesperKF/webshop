@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import useCartStore from "@/app/components/useCartStore";
 import { IoArrowBackSharp } from "react-icons/io5";
 import { FaArrowDown } from "react-icons/fa";
+import Header from "@/app/components/Header";
 
 export default function SingleProductClient({ product }) {
   const router = useRouter();
@@ -33,14 +34,16 @@ export default function SingleProductClient({ product }) {
   };
 
   return (
-    <article className="grid grid-cols-[minmax(20px,0.2fr)_1fr_minmax(20px,0.2fr)]">
+    <section className="px-24 pt-10">
+    <Header className=""/>
+    <article className="grid grid-cols-[minmax(20px,0.2fr)_1fr_minmax(20px,0.2fr)] mb-8">
       <div className="col-2">
         <Link
           href="/shop"
-          className="text-black mb-4 flex items-center cursor-pointer text-xl w-fit rounded-full p-2 mt-4 border border-gray-300"
+          className="text-white mb-4 flex items-center cursor-pointer text-xl bg-gradient-to-br from-purple-700/80 to-red-500/80 w-fit rounded-full p-2 mt-4 absolute top-38"
         >
           <IoArrowBackSharp />
-          Tilbage
+          
         </Link>
 
         {/* Opdeling */}
@@ -87,14 +90,8 @@ export default function SingleProductClient({ product }) {
                 Discount: {product.discountPercentage}%
               </p>
             </div>
-            {/* <Link
-              className="flex mt-16 justify-center p-4 bg-gradient-to-br from-purple-700/80 to-red-500/80 rounded-full text-white hover:invert"
-              href={"/checkout"} 
-            >
-              Buy
-            </Link> */}
             <button
-              className="flex mt-16 justify-center p-4 bg-gradient-to-br from-purple-700/80 to-red-500/80 rounded-full text-white hover:invert"
+              className="flex mt-16 justify-center p-4 bg-gradient-to-br from-purple-700/80 to-red-500/80 rounded-full w-full cursor-pointer text-white hover:invert"
               onClick={handleBuyClick}
             >
               Buy
@@ -178,5 +175,6 @@ export default function SingleProductClient({ product }) {
         </div>
       </div>
     </article>
+    </section>
   );
 }
