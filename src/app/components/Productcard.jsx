@@ -3,7 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { IoIosBasket } from "react-icons/io";
+import { IoCartOutline } from "react-icons/io5";
+
 import useCartStore from "./useCartStore";
 
 import Cart from "./Cart";
@@ -84,13 +85,14 @@ const Productcard = ({ data }) => {
                 <div className="flex justify-between items-center">
                   <h2 className="text-gray-500">€ {product.price}</h2>
                   <div
-                    className="rounded-full bg-gradient-to-br from-cyan-300 to-blue-700 text-white p-2 hover:scale-120 cursor-pointer"
+                    className="rounded-full bg-gradient-to-br from-purple-200 to-purple-700 text-white p-2 hover:scale-120 cursor-pointer"
                     onClick={(e) => {
                       e.preventDefault();
                       addToCart(product);
                     }}
                   >
-                    <IoIosBasket />
+                    <IoCartOutline />
+
                   </div>
                 </div>
               </li>
