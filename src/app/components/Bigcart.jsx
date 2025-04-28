@@ -1,6 +1,7 @@
 "use client";
 import useCartStore from "./useCartStore";
 import { FaRegTrashAlt } from "react-icons/fa";
+import Image from "next/image";
 
 const Bigcart = () => {
   const cart = useCartStore((state) => state.cart);
@@ -11,7 +12,7 @@ const Bigcart = () => {
   .toFixed(2);
 
   return (
-    <div className="p-4 border border-gray-200 rounded-lg shadow-md">
+    <div className="ml-40 mr-40 mb-20 p-4 border border-gray-200 rounded-lg shadow-md">
       <h1 className="text-2xl font-bold mb-4">Checkout</h1>
       {cart.length === 0 ? (
         <p className="text-gray-500">Your cart is empty</p>
@@ -21,11 +22,20 @@ const Bigcart = () => {
             {cart.map((item) => (
               <li
                 key={item.id}
-                className="flex justify-between items-center py-3 px-8 hover:shadow-lg transition-shadow duration-300 hover:bg-gray-100"
+                className="flex justify-between items-center py-3 px-4 hover:shadow-lg transition-shadow duration-300 hover:bg-gray-100"
               >
+                <div className="flex items-center gap-4">
+                <Image
+                src={item.images[0]}
+                alt={item.title}
+                width={100}
+                height={100}
+                className="object-contain pr-4"
+                />
                 <div>
                   <p className="font-semibold">{item.title} (x{item.quantity})</p>
                   <p className="text-gray-700 text-sm">€ {(item.price * item.quantity).toFixed(2)}</p>
+                </div>
                 </div>
                 <FaRegTrashAlt
                   className="text-red-500 cursor-pointer hover:scale-110 transition-transform"

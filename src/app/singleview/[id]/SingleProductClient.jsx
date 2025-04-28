@@ -71,7 +71,7 @@ export default function SingleProductClient({ product }) {
             </div>
             <Link
               className="flex mt-16 justify-center p-4 bg-gradient-to-br from-purple-700/80 to-red-500/80 rounded-full text-white hover:invert"
-              href={"/checkout"}
+              href={"/checkout"} 
             >
               Buy
             </Link>

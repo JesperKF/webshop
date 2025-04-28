@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { IoIosBasket } from "react-icons/io";
+import Carticon from "./Carticon";
 
 const Header = () => {
   const pathname = usePathname();
@@ -44,7 +44,7 @@ const Header = () => {
           pathname === "/cart"
         }`}
       >
-        <IoIosBasket
+        <Carticon
           className="text-white"
           size={24}
         />
