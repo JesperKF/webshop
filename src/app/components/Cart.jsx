@@ -2,7 +2,7 @@
 
 import useCartStore from "./useCartStore";
 import { FaRegTrashAlt } from "react-icons/fa";
-
+import Link from "next/link";
 
 const Cart = () => {
   const cart = useCartStore((state) => state.cart);
@@ -32,9 +32,11 @@ const Cart = () => {
           <p className="font-semibold text-black">Total: € {total}</p>
         </>
       )}
-      <button className="mt-4 w-full bg-gradient-to-br from-purple-700/80 to-red-500/80 text-white hover:bg-black font-semibold py-2 px-4 rounded">
-        Go to checkout
-      </button>
+      <Link href="/checkout">
+        <button className="mt-4 w-full bg-gradient-to-br from-purple-700/80 to-red-500/80 text-white hover:bg-black font-semibold py-2 px-4 rounded">
+          Go to checkout
+        </button>
+      </Link>
     </div>
   );
 };
