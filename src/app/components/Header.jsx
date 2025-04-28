@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ShoppingBasket } from "lucide-react";
+import { IoIosBasket } from "react-icons/io";
 
 const Header = () => {
   const pathname = usePathname();
@@ -44,7 +44,7 @@ const Header = () => {
           pathname === "/cart"
         }`}
       >
-        <ShoppingBasket
+        <IoIosBasket
           className="text-white"
           size={24}
         />
