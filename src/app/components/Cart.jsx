@@ -21,7 +21,7 @@ const Cart = () => {
         <>
           <ul className="text-gray-800 mb-4">
             {cart.map((item) => (
-              <li key={item.id} className="relative flex justify-between p-2 bg-gradient-to-br from-purple-700/40 to-red-500/40 text-gray-900 rounded-md 0 mb-1">
+              <li key={item.id} className="relative flex justify-between p-2 bg-white text-gray-900 rounded-md 0 mb-1 border-2 border-pink-300">
               <span className="max-w-[75%] break-words">
                 {item.title} (x{item.quantity}) - € {(item.price * item.quantity).toFixed(2)}
               </span>
