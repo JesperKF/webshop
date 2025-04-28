@@ -40,7 +40,7 @@ export default function SingleProductClient({ product }) {
       <div className="col-2">
         <Link
           href="/shop"
-          className="text-white mb-4 flex items-center cursor-pointer text-xl bg-gradient-to-br from-purple-700/80 to-red-500/80 w-fit rounded-full p-2 mt-4 absolute top-38"
+          className="text-white mb-4 flex items-center cursor-pointer text-xl bg-gradient-to-br from-purple-700/80 to-red-500/80 w-fit rounded-full p-2 mt-4 absolute top-38 hover:bg-black font-semibold"
         >
           <IoArrowBackSharp />
           
@@ -91,7 +91,7 @@ export default function SingleProductClient({ product }) {
               </p>
             </div>
             <button
-              className="flex mt-16 justify-center p-4 bg-gradient-to-br from-purple-700/80 to-red-500/80 rounded-full w-full cursor-pointer text-white hover:invert"
+              className="flex mt-16 justify-center p-4 bg-gradient-to-br from-purple-700/80 to-red-500/80 rounded-full w-full cursor-pointer text-white hover:bg-black font-semibold"
               onClick={handleBuyClick}
             >
               Buy
